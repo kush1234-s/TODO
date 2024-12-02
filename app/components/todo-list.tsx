@@ -70,23 +70,19 @@ const DraggableItem = ({
         </label>
       </div>
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon">
-          <Popover>
-            <PopoverTrigger>
-              <div className="flex items-center cursor-pointer">
-                <Edit className="w-4 h-4" />
-              </div>
-            </PopoverTrigger>
-            <PopoverContent className="p-1 absolute top-1 left-[-300px]">
-              <Input
-                type="text"
-                placeholder={task.text}
-                onChange={(e) => handleChange(task.id, e)}
-                className="border border-pink-800 rounded-lg placeholder:p-1 pl-2 bg-orange-900"
-              />
-            </PopoverContent>
-          </Popover>
-        </Button>
+        <Popover>
+          <PopoverTrigger>
+              <Edit className="w-4 h-4 cursor-pointer" />
+          </PopoverTrigger>
+          <PopoverContent className="p-1 absolute top-1 left-[-300px]">
+            <Input
+              type="text"
+              placeholder={task.text}
+              onChange={(e) => handleChange(task.id, e)}
+              className="border border-pink-800 rounded-lg placeholder:p-1 pl-2 bg-orange-900"
+            />
+          </PopoverContent>
+        </Popover>
         <Button variant="ghost" size="icon" onClick={() => deleteTask(task.id)}>
           <Trash className="w-4 h-4" />
         </Button>
